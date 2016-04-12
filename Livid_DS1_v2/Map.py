@@ -41,8 +41,8 @@ class DS1Colors:
 
 	class ModeButtons:
 		Main = LividRGB.WHITE
-		Select = LividRGB.RED
-		Clips = LividRGB.GREEN
+		Select = LividRGB.WHITE
+		Clips = LividRGB.WHITE
 	
 
 	class DefaultButton:
@@ -103,16 +103,16 @@ class DS1Colors:
 	
 
 	class Mixer:
-		SoloOn = LividRGB.BLUE
-		SoloOff = LividRGB.CYAN
+		SoloOn = LividRGB.CYAN
+		SoloOff = LividRGB.OFF
 		MuteOn = LividRGB.YELLOW
 		MuteOff = LividRGB.WHITE
 		ArmSelected = LividRGB.RED
 		ArmUnselected = LividRGB.RED
-		ArmOff = LividRGB.GREEN
+		ArmOff = LividRGB.OFF
 		StopClip = LividRGB.BLUE
-		SelectedOn = LividRGB.BLUE
-		SelectedOff = LividRGB.MAGENTA
+		SelectedOn = LividRGB.GREEN
+		SelectedOff = LividRGB.BLUE
 	
 
 	class Recording:
