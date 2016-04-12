@@ -220,7 +220,7 @@ class DS1(LividControlSurface):
 		self._mixer.layer = Layer(volume_controls = self._fader_matrix, track_select_dial = self._encoder[1])
 		self._strip = [self._mixer.channel_strip(index) for index in range(8)]
 		for index in range(8):
-			self._strip[index].layer = Layer(priority = 4, parameter_controls = self._dial_matrix.submatrix[index:index+1, :])
+			self._strip[index].layer = Layer(priority = 4, send_controls = self._dial_matrix.submatrix[index:index+1, :-1], pan_control = self._dial[4][index])
 		self._mixer.selected_strip().layer = Layer(priority = 4, parameter_controls = self._selected_parameter_controls)
 		self._mixer.master_strip().layer = Layer(priority = 4, parameter_controls = self._side_dial_matrix.submatrix[:3, :])
 		self._mixer.main_layer = AddLayerMode(self._mixer, Layer(priority = 4, solo_buttons = self._bottom_buttons, mute_buttons = self._top_buttons))
