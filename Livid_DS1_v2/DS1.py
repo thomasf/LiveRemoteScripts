@@ -195,21 +195,21 @@ class DS1(LividControlSurface):
 
 	def _setup_session_control(self):
 		self._session_ring = SessionRingComponent(num_tracks = 8, num_scenes = 1, tracks_to_use = self._tracks_to_use)
-		self._session_ring.set_enabled(True)
+		# self._session_ring.set_enabled(True)
 
-		self._session_navigation = DS1SessionNavigationComponent(name = 'SessionNavigation', session_ring = self._session_ring)
-		self._session_navigation._vertical_banking.scroll_up_button.color = 'Session.NavigationButtonOn'
-		self._session_navigation._vertical_banking.scroll_down_button.color = 'Session.NavigationButtonOn'
-		self._session_navigation._horizontal_banking.scroll_up_button.color = 'Session.NavigationButtonOn'
-		self._session_navigation._horizontal_banking.scroll_down_button.color = 'Session.NavigationButtonOn'
-		self._session_navigation.layer = Layer(priority = 4, track_select_dial = ComboElement(control = self._encoder[1], modifier = [self._encoder_button[1]] ), up_button = self._grid[0][1], down_button = self._grid[0][2])
-		self._session_navigation.set_enabled(False)
+		# self._session_navigation = DS1SessionNavigationComponent(name = 'SessionNavigation', session_ring = self._session_ring)
+		# self._session_navigation._vertical_banking.scroll_up_button.color = 'Session.NavigationButtonOn'
+		# self._session_navigation._vertical_banking.scroll_down_button.color = 'Session.NavigationButtonOn'
+		# self._session_navigation._horizontal_banking.scroll_up_button.color = 'Session.NavigationButtonOn'
+		# self._session_navigation._horizontal_banking.scroll_down_button.color = 'Session.NavigationButtonOn'
+		# self._session_navigation.layer = Layer(priority = 4, track_select_dial = ComboElement(control = self._encoder[1], modifier = [self._encoder_button[1]] ), up_button = self._grid[0][1], down_button = self._grid[0][2])
+		# self._session_navigation.set_enabled(False)
 		
 		self._session = DS1SessionComponent(session_ring = self._session_ring, auto_name = True)
-		hasattr(self._session, '_enable_skinning') and self._session._enable_skinning()
-		self._session.layer = Layer(priority = 4, scene_launch_buttons = self._grid_matrix.submatrix[1:2, 1:2])
-		self._session.clips_layer = AddLayerMode(self._session, Layer(priority = 4, clip_launch_buttons = self._top_buttons, stop_track_clip_buttons = self._bottom_buttons))
-		self._session.set_enabled(False)
+		# hasattr(self._session, '_enable_skinning') and self._session._enable_skinning()
+		# self._session.layer = Layer(priority = 4, scene_launch_buttons = self._grid_matrix.submatrix[1:2, 1:2])
+		# self._session.clips_layer = AddLayerMode(self._session, Layer(priority = 4, clip_launch_buttons = self._top_buttons, stop_track_clip_buttons = self._bottom_buttons))
+		# self._session.set_enabled(False)
 	
 
 	def _setup_mixer_control(self):
@@ -272,9 +272,9 @@ class DS1(LividControlSurface):
 
 	def _setup_main_modes(self):
 		self._main_modes = ModesComponent(name = 'MainModes')
-		self._main_modes.add_mode('Main', [self._mixer, self._mixer.main_layer, self._session, self._session_navigation], cycle_mode_button_color = 'ModeButtons.Main')
-		self._main_modes.add_mode('Select', [self._mixer, self._mixer.select_layer, self._session, self._session_navigation], cycle_mode_button_color = 'ModeButtons.Select')
-		self._main_modes.add_mode('Clips', [self._mixer, self._session, self._session.clips_layer, self._session_navigation], cycle_mode_button_color = 'ModeButtons.Clips')
+		self._main_modes.add_mode('Main', [self._mixer, self._mixer.main_layer], cycle_mode_button_color = 'ModeButtons.Main')
+		self._main_modes.add_mode('Select', [self._mixer, self._mixer.select_layer], cycle_mode_button_color = 'ModeButtons.Select')
+		# self._main_modes.add_mode('Clips', [self._mixer, self._session, self._session.clips_layer, self._session_navigation], cycle_mode_button_color = 'ModeButtons.Clips')
 		self._main_modes.layer = Layer(priority = 4, cycle_mode_button = self._grid[2][2])
 		self._main_modes.selected_mode = 'Select'
 		self._main_modes.set_enabled(False)
