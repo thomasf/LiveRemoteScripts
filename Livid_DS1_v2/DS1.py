@@ -129,7 +129,7 @@ class DS1(LividControlSurface):
 	def _initialize_script(self):
 		super(DS1, self)._initialize_script()
 		self._main_modes.set_enabled(True)
-		self._main_modes.selected_mode = 'Main'
+		self._main_modes.selected_mode = 'Select'
 	
 
 	def _initialize_hardware(self):
@@ -276,7 +276,7 @@ class DS1(LividControlSurface):
 		self._main_modes.add_mode('Select', [self._mixer, self._mixer.select_layer, self._session, self._session_navigation], cycle_mode_button_color = 'ModeButtons.Select')
 		self._main_modes.add_mode('Clips', [self._mixer, self._session, self._session.clips_layer, self._session_navigation], cycle_mode_button_color = 'ModeButtons.Clips')
 		self._main_modes.layer = Layer(priority = 4, cycle_mode_button = self._grid[2][2])
-		self._main_modes.selected_mode = 'Main'
+		self._main_modes.selected_mode = 'Select'
 		self._main_modes.set_enabled(False)
 	
 
