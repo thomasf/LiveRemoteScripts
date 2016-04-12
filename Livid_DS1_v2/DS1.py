@@ -190,7 +190,7 @@ class DS1(LividControlSurface):
 	
 
 	def _tracks_to_use(self):
-		return self.song.visible_tracks + self.song.return_tracks
+		return self.song.visible_tracks
 	
 
 	def _setup_session_control(self):
